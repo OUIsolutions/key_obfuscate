@@ -1,7 +1,7 @@
 
 
 
-private_key_obfuscate.create_bytes_to_save =function(key)
+private_key_obfuscate.create_bytes_to_save =function(key,starter_num)
     local bytes_to_save = {}
     for i=1,#key do 
         local byte_converted = private_key_obfuscate.byte(private_key_obfuscate.sub(key,i,i)) 
@@ -9,7 +9,7 @@ private_key_obfuscate.create_bytes_to_save =function(key)
             byte = byte_converted,
             index = i-1,--these its required because its a c array
             ajusted = false,
-            current_value= 0
+            current_value= starter_num
          }
     end 
     return bytes_to_save
