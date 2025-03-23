@@ -3,7 +3,7 @@
 function main()
     local key_content = io.open("darwinconf.lua","r"):read("a")
     props ={
-        key = key_content,
+        key = "my custom menssage",
         name = "my_projectd",
         seed = 123,
         --debug = true,

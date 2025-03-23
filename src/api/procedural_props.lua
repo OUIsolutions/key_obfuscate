@@ -14,6 +14,7 @@ private_key_obfuscate.create_procedural_props = function(user_props)
         create_a_if = 0.33,
         max_scopes = 3,
         close_scopes = 0.66,
+        fake_byte_set = 0.33,
         real_byte_set = 0.5,
     }
     if not user_props then
