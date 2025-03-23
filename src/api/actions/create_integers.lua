@@ -1,11 +1,11 @@
 
 
-private_key_obfuscate.create_integer = function(props,randonizer,procedural_props,project_name,code, already_existed_integers,bytes_to_save)
+private_key_obfuscate.create_integer = function(props,randonizer,procedural_props,project_name,code, already_existed_integers,bytes_to_save,total_scope)
 
     local index = #already_existed_integers + 1
     local name = project_name.."_integer_"..index
     code.append("\tint "..name.." = ")
-    predictibble =  private_key_obfuscate.make_predicible_operation(randonizer,procedural_props,project_name, already_existed_integers,bytes_to_save)
+    local predictibble =  private_key_obfuscate.make_predicible_operation(randonizer,procedural_props,project_name, already_existed_integers,bytes_to_save)
     code.append(predictibble.code)
     code.append(";")
     code.append("/*")

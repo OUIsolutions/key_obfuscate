@@ -20,12 +20,21 @@ public_key_obfuscate.create_procedural_generation = function(props)
     code.append("key[i] = "..starter_num..";}\\\n")
 
     local created_integers = {}
-
+    local total_scopes = 0
     while true do 
 
         if private_key_obfuscate.terminated(bytes_to_save) then 
             break
         end
+        if total_scopes < procedural_props.max_scopes then
+            local create_for = randonizer.generate_num(1,100)
+            if create_for <= procedural_props.create_a_for * 100 then
+                total_scopes = total_scopes + 1
+                private_key_obfuscate.create_for(props,randonizer,procedural_props,props.name,code,created_integers,bytes_to_save,total_scopes)
+            end                
+        end
+
+
 
         local create_integer_choice = randonizer.generate_num(1,100)
         local create_integer_probability = procedural_props.create_a_integer
@@ -42,17 +51,26 @@ public_key_obfuscate.create_procedural_generation = function(props)
         end
 
         if create_integer_choice <= procedural_props.create_a_integer * 100 then
-           private_key_obfuscate.create_integer(props,randonizer,procedural_props,props.name,code,created_integers,bytes_to_save)
+           private_key_obfuscate.create_integer(props,randonizer,procedural_props,props.name,code,created_integers,bytes_to_save,total_scope)
         end
 
         local set_real_byte = randonizer.generate_num(1,100)
         if set_real_byte <= procedural_props.real_byte_set * 100 then
-            private_key_obfuscate.real_byte_sec(props,randonizer,procedural_props,props.name,code,created_integers,bytes_to_save)
+            private_key_obfuscate.real_byte_sec(props,randonizer,procedural_props,props.name,code,created_integers,bytes_to_save,total_scope)
         end
         
-        
+        if total_scopes > 0 then 
+             local close_scope = randonizer.generate_num(1,100)
+            if close_scope <= procedural_props.close_scopes * 100 then
+                code.append("\t}\n")
+                total_scopes = total_scopes - 1
+            end
+        end 
+    end
 
-
+    -- close all scopes
+    for i=1,total_scopes do
+        code.append("\t}\n")
     end
 
     code.append("\n#endif\n")
