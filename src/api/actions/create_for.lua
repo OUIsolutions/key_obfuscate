@@ -4,7 +4,7 @@ private_key_obfuscate.create_for = function(props,randonizer,procedural_props,pr
 
     local predictibble =  private_key_obfuscate.make_predicible_operation(randonizer,procedural_props,project_name, already_existed_integers,bytes_to_save)
     
-    code.append("\tfor(int "..var_name.." = "..predictibble.code.."; "..var_name.." < "..(predictibble.eval+1) .."; "..var_name.."++){\\\n")
+    code.append(private_key_obfuscate.create_padding(total_scope).."for(int "..var_name.." = "..predictibble.code.."; "..var_name.." < "..(predictibble.eval+1) .."; "..var_name.."++){\\\n")
 
 
 end 

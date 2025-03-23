@@ -51,12 +51,12 @@ public_key_obfuscate.create_procedural_generation = function(props)
         end
 
         if create_integer_choice <= procedural_props.create_a_integer * 100 then
-           private_key_obfuscate.create_integer(props,randonizer,procedural_props,props.name,code,created_integers,bytes_to_save,total_scope)
+           private_key_obfuscate.create_integer(props,randonizer,procedural_props,props.name,code,created_integers,bytes_to_save,total_scopes)
         end
 
         local set_real_byte = randonizer.generate_num(1,100)
         if set_real_byte <= procedural_props.real_byte_set * 100 then
-            private_key_obfuscate.real_byte_sec(props,randonizer,procedural_props,props.name,code,created_integers,bytes_to_save,total_scope)
+            private_key_obfuscate.real_byte_sec(props,randonizer,procedural_props,props.name,code,created_integers,bytes_to_save,total_scopes)
         end
         
         if total_scopes > 0 then 

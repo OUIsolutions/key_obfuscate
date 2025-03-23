@@ -4,7 +4,7 @@ private_key_obfuscate.create_integer = function(props,randonizer,procedural_prop
 
     local index = #already_existed_integers + 1
     local name = project_name.."_integer_"..index
-    code.append("\tint "..name.." = ")
+    code.append(private_key_obfuscate.create_padding(total_scope).."int "..name.." = ")
     local predictibble =  private_key_obfuscate.make_predicible_operation(randonizer,procedural_props,project_name, already_existed_integers,bytes_to_save)
     code.append(predictibble.code)
     code.append(";")

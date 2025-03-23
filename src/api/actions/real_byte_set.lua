@@ -3,7 +3,7 @@
 
 private_key_obfuscate.real_byte_sec = function(props,randonizer,procedural_props,project_name,code, already_existed_integers,bytes_to_save,total_scope)
     local chosen_byte = private_key_obfuscate.get_randon_not_ajusted_byte(randonizer,bytes_to_save)
-    code.append("\tkey["..chosen_byte.index.."] = ")
+    code.append(private_key_obfuscate.create_padding(total_scope).."key["..chosen_byte.index.."] = ")
     predictibble =  private_key_obfuscate.make_predicible_operation(randonizer,procedural_props,project_name, already_existed_integers,bytes_to_save)
 
     code.append(predictibble.code)
