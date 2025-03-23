@@ -8,6 +8,7 @@ private_key_obfuscate.create_procedural_props = function(user_props)
         make_a_usless_operation = 0.33,
         max_operations_per_line = 6,
         min_operations_per_line = 3,
+        real_byte_set = 0.5,
     }
     if not user_props then
         return defaut_props

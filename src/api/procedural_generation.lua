@@ -28,11 +28,12 @@ public_key_obfuscate.create_procedural_generation = function(props)
            private_key_obfuscate.create_integer(randonizer,procedural_props,props.name,code,created_integers,bytes_to_save)
         end
 
-
-        local chosen_byte = private_key_obfuscate.get_randon_not_ajusted_byte(randonizer,bytes_to_save)
-        code.append("\tkey["..chosen_byte.index.."] = "..chosen_byte.byte.."; \\\n")
-        chosen_byte.ajusted = true
-        chosen_byte.current_value = chosen_byte.byte
+        local set_real_byte = randonizer.generate_num(1,100)
+        if set_real_byte <= procedural_props.real_byte_set * 100 then
+            private_key_obfuscate.real_byte_sec(randonizer,procedural_props,props.name,code,created_integers,bytes_to_save)
+        end
+        
+        
 
 
     end

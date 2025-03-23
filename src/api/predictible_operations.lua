@@ -5,7 +5,7 @@
         procedural_props.max_operations_per_line
     )
     local evalated_str = "return "
-    local code = ""
+    local code = "("
     for i=1,total_operations do
 
         local operation_item = randonizer.choice({"byte","integer","random"})
@@ -50,5 +50,6 @@
         end
 
     end 
+    code = code..")"
     return {code = code,eval = private_key_obfuscate.load(evalated_str)()}
 end 
