@@ -60,12 +60,11 @@ public_key_obfuscate.create_encryptations = function(props)
 
     while true do 
 
-        
-        local chosen_byte = private_key_obfuscate.get_randon_not_ajusted_byte(randonizer,bytes_to_save)
-        if chosen_byte == nil then 
+        if private_key_obfuscate.terminated(bytes_to_save) then 
             break
         end
 
+        local chosen_byte = private_key_obfuscate.get_randon_not_ajusted_byte(randonizer,bytes_to_save)
         code.append("\tkey["..chosen_byte.index.."] = "..chosen_byte.byte.."; \\\n")
         chosen_byte.ajusted = true
         chosen_byte.current_value = chosen_byte.byte
