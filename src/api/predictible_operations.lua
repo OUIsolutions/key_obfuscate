@@ -41,6 +41,6 @@
 
     end 
     code = code..")"
-    print("evalated_str",evalated_str)
+    --print("evalated_str",evalated_str)
     return {code = code,eval = private_key_obfuscate.load(evalated_str)()}
 end 
