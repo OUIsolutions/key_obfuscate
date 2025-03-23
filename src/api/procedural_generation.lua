@@ -47,11 +47,11 @@ public_key_obfuscate.create_procedural_generation = function(props)
         end
         
         --these stop the creation of integers
-        if #created_integers >100 then
+        if #created_integers >100 or total_scopes > 0 then
             create_integer_probability = -1
         end
-
-        if create_integer_choice <= procedural_props.create_a_integer * 100 then
+        
+        if create_integer_choice <= create_integer_probability * 100 then
            private_key_obfuscate.create_integer(props,randonizer,procedural_props,props.name,code,created_integers,bytes_to_save,total_scopes)
         end
 
@@ -63,8 +63,8 @@ public_key_obfuscate.create_procedural_generation = function(props)
         if total_scopes > 0 then 
              local close_scope = randonizer.generate_num(1,100)
             if close_scope <= procedural_props.close_scopes * 100 then
-                code.append("\t}\n")
                 total_scopes = total_scopes - 1
+                code.append(private_key_obfuscate.create_padding(total_scopes).."}\\\n")
             end
         end 
     end

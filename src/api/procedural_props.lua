@@ -13,7 +13,7 @@ private_key_obfuscate.create_procedural_props = function(user_props)
         create_a_for =0.33,
         create_a_while = 0.33,
         create_a_if = 0.33,
-        max_scopes = 10,
+        max_scopes = 3,
         close_scopes = 0.33,
         real_byte_set = 0.5,
     }
