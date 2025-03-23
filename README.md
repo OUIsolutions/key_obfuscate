@@ -1,6 +1,9 @@
 # key_obfuscate
-a key obfuscator generator 
+a key obfuscator generator that generate obfuscated keys for C code , that are harder to be reverse engineered.
 
+## Cli Usage
+for creating a key encryption,just run the command below:
+```shell
 
 
 ## Building from Scratch
