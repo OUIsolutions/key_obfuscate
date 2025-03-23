@@ -2,11 +2,11 @@
 
 
 
-public_key_obfuscate.create_encryptations = function(props)
+public_key_obfuscate.create_procedural_generation = function(props)
     local randonizer = private_key_obfuscate.newRandonizer(119)
     local bytes_to_save = private_key_obfuscate.create_bytes_to_save(props.key)
     local code  =private_key_obfuscate.newCodeFormater()
-    local statisc = private_key_obfuscate.create_statiscs(props.statisc)
+    local procedural_props = private_key_obfuscate.create_procedural_props(props.procedural_props)
     code.append("#ifndef "..props.name .. "_get_key\n")
     code.append("#define "..props.name.."_get_key(key) \\\n")
 
@@ -20,8 +20,8 @@ public_key_obfuscate.create_encryptations = function(props)
         end
 
         local create_integer_choice = randonizer.generate_num(1,100)
-        if create_integer_choice <= statisc.create_a_integer * 100 then
-           private_key_obfuscate.create_integer(randonizer,props.name,code,created_integers,bytes_to_save)
+        if create_integer_choice <= procedural_props.create_a_integer * 100 then
+           private_key_obfuscate.create_integer(randonizer,procedural_props,props.name,code,created_integers,bytes_to_save)
         end
 
 
