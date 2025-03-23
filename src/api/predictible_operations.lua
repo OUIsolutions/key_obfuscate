@@ -17,8 +17,12 @@
             evalated_str = evalated_str.." "..chosen_byte.current_value
         
         elseif operation_item == "integer" and #already_existed_integers > 0 then 
-            local chosen_index = randonizer.generate_num(1,#already_existed_integers)
-            local name = project_name.."_integer_"..chosen_index
+            local chosen_index =1 
+            if #already_existed_integers > 1 then
+                 chosen_index = randonizer.generate_num(1,#already_existed_integers)
+            end 
+            local formmated_index = private_key_obfuscate.gsub(chosen_index,".","")
+            local name = project_name.."_integer_"..formmated_index
             local value = already_existed_integers[chosen_index]
             code = code.." "..name
             evalated_str = evalated_str.." "..value
