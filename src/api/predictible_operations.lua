@@ -14,28 +14,18 @@
         if operation_item == "byte" then 
             local chosen_byte = private_key_obfuscate.get_randon_byte(randonizer,bytes_to_save)
             code = code.." ".."key["..chosen_byte.index.."]"
-            evalated_str = evalated_str.." "..chosen_byte.current_value
+            evalated_str = evalated_str.." "..private_key_obfuscate.parse_to_int_str(chosen_byte.current_value)
         
         elseif operation_item == "integer" and #already_existed_integers > 0 then 
             local chosen_index =1 
             if #already_existed_integers > 1 then
                  chosen_index = randonizer.generate_num(1,#already_existed_integers)
             end 
-            local chosen_index_str = ""..chosen_index
-            local formmated_index = ""
-
-            for j=1,#chosen_index_str do
-                local current_char =private_key_obfuscate.sub(chosen_index_str,j,j)
-                if current_char == "." then
-                    break
-                end
-                formmated_index = formmated_index.. current_char
-
-            end
+            local formmated_index = private_key_obfuscate.parse_to_int_str (chosen_index)
             local name = project_name.."_integer_"..formmated_index
             local value = already_existed_integers[chosen_index]
             code = code.." "..name
-            evalated_str = evalated_str.." "..value
+            evalated_str = evalated_str.." "..private_key_obfuscate.parse_to_int_str(value)
         else 
             local randon_int = randonizer.generate_num(1000,100000)
             code = code.." "..randon_int
