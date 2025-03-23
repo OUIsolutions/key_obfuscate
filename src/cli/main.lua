@@ -6,6 +6,7 @@ function main()
         key = key_content,
         name = "my_projectd",
         seed = 123,
+        debug = true,
     }
     code = public_key_obfuscate.create_procedural_generation (props)
     io.open("test.h","w"):write(code):close()
