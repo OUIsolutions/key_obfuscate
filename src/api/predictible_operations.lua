@@ -29,7 +29,7 @@
         else 
             local randon_int = randonizer.generate_num(1000,100000)
             code = code.." "..randon_int
-            evalated_str = evalated_str.." "..randon_int
+            evalated_str = evalated_str.." "..private_key_obfuscate.parse_to_int_str(randon_int)
         end
 
 
@@ -41,5 +41,6 @@
 
     end 
     code = code..")"
+    print("evalated_str",evalated_str)
     return {code = code,eval = private_key_obfuscate.load(evalated_str)()}
 end 
