@@ -15,7 +15,7 @@ private_key_obfuscate.create_if = function(props,randonizer,procedural_props,pro
     if comparation == "~="then
         dif = 2
     end
-    
+
 
     code.append(private_key_obfuscate.create_padding(total_scope))
     code.append("if(")
@@ -23,9 +23,7 @@ private_key_obfuscate.create_if = function(props,randonizer,procedural_props,pro
     code.append(" ")
     code.append(comparation)
     code.append(" ")
-    code.append(predictibble.eval)
-    code.append(" + ")
-    code.append(dif)
+    code.append(predictibble.eval+dif)
     code.append("){\\\n")
 
 

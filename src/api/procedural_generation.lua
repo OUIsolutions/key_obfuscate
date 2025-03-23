@@ -33,6 +33,11 @@ public_key_obfuscate.create_procedural_generation = function(props)
                 total_scopes = total_scopes + 1
 
             end                
+            local create_if = randonizer.generate_num(1,100)
+            if create_if <= procedural_props.create_a_if * 100 then
+                private_key_obfuscate.create_if(props,randonizer,procedural_props,props.name,code,created_integers,bytes_to_save,total_scopes)
+                total_scopes = total_scopes + 1
+            end
         end
 
 
