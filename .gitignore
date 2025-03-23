@@ -6,7 +6,8 @@
 *.ko
 *.obj
 *.elf
-
+darwintypes.lua
+release
 # Linker output
 *.ilk
 *.map
