@@ -8,6 +8,7 @@ teste*
 *.obj
 test.c
 *.elf
+main.c
 darwintypes.lua
 release
 # Linker output
