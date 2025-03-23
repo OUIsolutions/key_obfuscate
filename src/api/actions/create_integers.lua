@@ -15,7 +15,7 @@ private_key_obfuscate.create_integer = function(props,randonizer,procedural_prop
     --code.append(predictibble.evalated_str)
     already_existed_integers[index] = predictibble.eval
     if props.debug then 
-        code.append("if("..predictibble.eval.." != "..name.."){")
+        code.append("\tif("..predictibble.eval.." != "..name.."){")
         code.append('printf("expected %d and was %d at var ('..name..')\\n",'..predictibble.eval..','..name..');')
         code.append("}\\\n")
     end
