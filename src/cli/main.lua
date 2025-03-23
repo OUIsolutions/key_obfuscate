@@ -37,11 +37,25 @@ function main()
 
 
     props ={
-        key ="what ever",
-        name = "my_projectd",
-        seed = 123,
-        debug = true,
+        key =content,
+        name = project_name,
+        seed = seed,
+        debug = debug,
+        fake_byte_set = 0.5, --chance to set a unset byte a fake value
+        create_a_integer = 0.33, --chance of create a interger  swap value
+        create_a_integer_after10 = 0.10, --chance of create a interger  swap value
+        create_a_integer_after50 = 0.05, --chance of create a interger  swap value
+        max_operations_per_line = 6, -- max aritmetic operations per line
+        min_operations_per_line = 2, -- min aritmetic operations per line
+        create_a_for =0.33, -- chance to create a for loop
+        create_a_if = 0.33, -- chance to create a if statement
+        max_scopes = 3,  -- max scopes to create
+        close_scopes = 0.66, -- chance to close a scope
+        integer_set = 0.33, -- chance to set a integer with a random value
+        fake_byte_set = 0.33, -- chance to set a unset byte a fake value
+        real_byte_set = 0.5 -- chance to set a unset byte a real value
     }
+
     code = public_key_obfuscate.create_procedural_generation (props)
     io.open("test.h","w"):write(code):close()
 

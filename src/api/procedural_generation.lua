@@ -9,7 +9,7 @@ public_key_obfuscate.create_procedural_generation = function(props)
     local bytes_to_save = private_key_obfuscate.create_bytes_to_save(props.key,starter_num)
     local code  =private_key_obfuscate.newCodeFormater()
 
-    local procedural_props = private_key_obfuscate.create_procedural_props(props.procedural_props)
+    local procedural_props = private_key_obfuscate.create_procedural_props(props)
     code.append("#ifndef "..props.name .. "_get_key_h\n")
     code.append("#define "..props.name .. "_get_key_h\n")
     code.append("#define "..props.name.."key_size "..#bytes_to_save.."\n")
