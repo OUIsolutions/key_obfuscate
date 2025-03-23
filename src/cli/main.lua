@@ -56,7 +56,14 @@ function main()
         real_byte_set = 0.5 -- chance to set a unset byte a real value
     }
 
+    --iterate over the props and verify if a flag is provided
+    for k,v in pairs(props) do
+        local flag = private_key_obfuscate.argv.get_flag_arg_by_index({k},1)
+        if flag then
+            props[k] = flag
+        end
+    end
     code = public_key_obfuscate.create_procedural_generation (props)
-    io.open("test.h","w"):write(code):close()
+    io.open(output,"w"):write(code):close()
 
 end 
