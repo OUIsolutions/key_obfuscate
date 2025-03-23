@@ -19,4 +19,10 @@ function main()
     if darwin.argv.one_of_args_exist("debian_static") then
         debian_static_build()
     end
+    if darwin.argv.one_of_args_exist("rpm_static") then
+        rpm_static_build()
+    end
+    if darwin.argv.one_of_args_exist("windowsi32") then
+        windowsi32_build()
+    end
 end 

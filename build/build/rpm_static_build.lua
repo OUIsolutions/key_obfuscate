@@ -5,8 +5,8 @@ function rpm_static_build()
     end
     rpm_static_build_done = true
     alpine_static_build()
-    darwin.dtw.copy_any_overwriting("release/alpine_static_bin.out",
-        ".cache/rpm_static_build/SOURCES/alpine_static_bin.out"
+    darwin.dtw.copy_any_overwriting("release/KeyObfuscate.out",
+        ".cache/rpm_static_build/SOURCES/KeyObfuscate.out"
     )
 
     local formmatted_rpm = [[
@@ -14,7 +14,7 @@ Name:           PROJECT_NAME
 Version:        VERSION
 Release:        1%{?dist}
 Summary:        SUMARY
-Source0:        alpine_static_bin.out
+Source0:       KeyObfuscate.out
 
 License:        LICENSE
 URL:           PROJECT_URL
