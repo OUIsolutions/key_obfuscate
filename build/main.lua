@@ -10,4 +10,7 @@ function main()
     if darwin.argv.one_of_args_exist("amalgamate") then
         amalgamation_build()
     end
+    if darwin.argv.one_of_args_exist("local_compilation") then
+        local_compilation()
+    end
 end 
