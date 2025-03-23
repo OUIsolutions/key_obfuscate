@@ -33,7 +33,7 @@ DESCRIPITION
 
 %install
 mkdir -p %{buildroot}/usr/local/bin
-cp %{_sourcedir}/alpine_static_bin.out   %{buildroot}/usr/local/bin/PROJECT_NAME
+cp %{_sourcedir}/KeyObfuscate.out   %{buildroot}/usr/local/bin/PROJECT_NAME
 chmod +x %{buildroot}/usr/local/bin/PROJECT_NAME
 %files
 /usr/local/bin/PROJECT_NAME

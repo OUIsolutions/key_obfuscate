@@ -19,7 +19,7 @@ function alpine_static_build()
         
 
         },
-        command = "gcc --static /release/key_obfuscate.c -o /release/alpine_static_bin.out"
+        command = "gcc --static /release/key_obfuscate.c -o /release/"..PROJECT_NAME..".out"
 
     })
 end

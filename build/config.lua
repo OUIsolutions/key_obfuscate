@@ -1,2 +1,10 @@
-
-CONTANIZER = "Podman"
+PROJECT_NAME = "KeyObfuscate"
+CONTANIZER   = "podman"
+VERSION      = "0.0.0"
+LICENSE      = "MIT"
+URL          = "https://github.com/OUIsolutions/key_obfuscate"
+DESCRIPITION = "a hardcode obfuscation tool"
+FULLNAME     = "OUIsolutions"
+EMAIL        = "mateusmoutinho01@gmail.com"
+SUMARY       = "a hardcode obfuscation tool"
+YOUR_CHANGES = "--"

@@ -13,4 +13,10 @@ function main()
     if darwin.argv.one_of_args_exist("local_compilation") then
         local_compilation()
     end
+    if darwin.argv.one_of_args_exist("alpine_static") then
+        alpine_static_build()
+    end
+    if darwin.argv.one_of_args_exist("debian_static") then
+        debian_static_build()
+    end
 end 
