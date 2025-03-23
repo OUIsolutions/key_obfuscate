@@ -16,11 +16,11 @@ printf("expected %d and was %d \n",115070.0,my_project_integer_2);\
 	key[8] = 97; \
 	key[1] = 97; \
 	key[0] = 101; \
-	int my_project_integer_3 =  my_project_integer_0 + my_project_integer_0;/*230140.0*/\
+	int my_project_integer_3 =  my_project_integer_1 + my_project_integer_1;/*230140.0*/\
 printf("expected %d and was %d \n",230140.0,my_project_integer_3);\
 	key[9] = 32; \
 	key[2] = 105; \
-	int my_project_integer_4 =  key[12] - my_project_integer_0;/*-114973.0*/\
+	int my_project_integer_4 =  key[12] - my_project_integer_1;/*-114973.0*/\
 printf("expected %d and was %d \n",-114973.0,my_project_integer_4);\
 	key[13] = 118; \
 	key[14] = 101; \

@@ -21,13 +21,16 @@
             if #already_existed_integers > 1 then
                  chosen_index = randonizer.generate_num(1,#already_existed_integers)
             end 
-            local formmated_index = ""
             local chosen_index_str = ""..chosen_index
-            for i=1,#chosen_index_str do
-                local current_char =private_key_obfuscate.sub(chosen_index_str,i,i)
-                if current_char ~= "." then
-                formmated_index = current_char
-                end 
+            local formmated_index = ""
+
+            for j=1,#chosen_index_str do
+                local current_char =private_key_obfuscate.sub(chosen_index_str,j,j)
+                if current_char == "." then
+                    break
+                end
+                formmated_index = formmated_index.. current_char
+
             end
             local name = project_name.."_integer_"..formmated_index
             local value = already_existed_integers[chosen_index]
