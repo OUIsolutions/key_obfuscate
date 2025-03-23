@@ -17,12 +17,12 @@ function main()
         content = content:read("a")
     end
 
-    local output = argv.get_flag_arg_by_index({"output", "o"},1,"key_obfuscate.h")
     local project_name = argv.get_flag_arg_by_index({"project_name", "pn"},1)
     if not project_name then
         print("No project name")
         return
     end
+    local output = argv.get_flag_arg_by_index({"output", "o"},1,project_name..".h")
 
     local seed = argv.get_flag_arg_by_index({"seed", "s"},1,1000)
     --convert seed to number
