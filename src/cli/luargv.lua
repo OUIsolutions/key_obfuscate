@@ -1,5 +1,5 @@
 
-private_key_obfuscate.argv = function()
+argv = function()
 
 private_luargv =  {}
 luargv = {}
@@ -368,4 +368,4 @@ luargv = luargv
 return luargv
 
 end 
-private_key_obfuscate.argv = private_key_obfuscate.argv()
+argv = argv()
