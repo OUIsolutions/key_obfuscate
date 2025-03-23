@@ -9,6 +9,7 @@ teste*
 test.c
 *.elf
 main.c
+test.h
 darwintypes.lua
 release
 # Linker output

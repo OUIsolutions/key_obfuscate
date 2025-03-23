@@ -71,7 +71,7 @@ public_key_obfuscate.create_procedural_generation = function(props)
 
     -- close all scopes
     for i=1,total_scopes do
-        code.append("\t}\n")
+        code.append("\t}\\\n")
     end
 
     code.append("\n#endif\n")
