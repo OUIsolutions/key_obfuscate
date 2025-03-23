@@ -9,7 +9,8 @@ private_key_obfuscate.create_bytes_to_save =function(key)
         bytes_to_save[i] = {
             byte = byte_converted,
             index = i-1,--these its required because its a c array
-            ajusted = false
+            ajusted = false,
+            current_value= 0
          }
     end 
     return bytes_to_save
@@ -58,15 +59,19 @@ public_key_obfuscate.create_encryptations = function(props)
     code.append("#define "..props.name.."_get_key(key) \\ \n")
 
     while true do 
-        local chosen_byte = private_key_obfuscate.get_randon_not_ajusted_byte(randonizer,bytes_to_save)
+
         
+        local chosen_byte = private_key_obfuscate.get_randon_not_ajusted_byte(randonizer,bytes_to_save)
         if chosen_byte == nil then 
             break
         end
 
         code.append("\tkey["..chosen_byte.index.."] = "..chosen_byte.byte.."; \\ \n")
         chosen_byte.ajusted = true
+        chosen_byte.current_value = chosen_byte.byte
         print("ajusted byte "..chosen_byte.byte.." index "..chosen_byte.index)
+
+
     end
 
     code.append("\n#endif\n")
