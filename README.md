@@ -1,5 +1,9 @@
 # key_obfuscate
 a key obfuscator generator that generate obfuscated keys for C code using procedural generation, that are harder to be reverse engineered.
+# Important 
+ - This is a experimental project, use it at your own risk.
+ - This project is not a cryptographer, it just obfuscate the key, it does not encrypt it.
+ - This project is not a security tool, it just make the key harder to be reverse engineered.
 
 ## Release
 | Item | What is it? |
