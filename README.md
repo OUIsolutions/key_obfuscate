@@ -4,8 +4,13 @@ a key obfuscator generator that generate obfuscated keys for C code using proced
 ## Release
 | **Item* | **What is it?** |
 | ------- | --- |
-
-
+|https://github.com/OUIsolutions/key_obfuscate/releases/download/0.0.1/debian_static.deb |Debian Package|
+|https://github.com/OUIsolutions/key_obfuscate/releases/download/0.0.1/KeyObfuscate.out  |Linux Binary|
+|https://github.com/OUIsolutions/key_obfuscate/releases/download/0.0.1/key_obfuscate.c   |C Source Code (Amalgamated)|
+|https://github.com/OUIsolutions/key_obfuscate/releases/download/0.0.1/key_obfuscate.exe |Windows Binary|
+|https://github.com/OUIsolutions/key_obfuscate/releases/download/0.0.1/key_obfuscate_api.lua |Lua API file|
+|https://github.com/OUIsolutions/key_obfuscate/releases/download/0.0.1/key_obfuscate_cli.lua |Lua CLI file that can be runned with **lua key_obfuscate_cli.lua** |
+|https://github.com/OUIsolutions/key_obfuscate/releases/download/0.0.1/rpm_static_build.rpm |RPM Package|
 ## Cli Usage
 for creating a key encryption,just run the command below:
 ```shell
