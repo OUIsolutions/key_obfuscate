@@ -3,6 +3,7 @@
 #define my_projectkey_size 25
 #define my_project_get_key(key) \
 	for(int i=0;i<25;i++){key[i] = 81.0;}\
+key[25] = 0;\
 	if(( 98696.0 - 84197.0 + key[20] + 41171.0 - 50940.0) <= 4811){\
 		key[11] = ( 62304.0 + key[19]) - 62288;/*set:97*/\
 	}\

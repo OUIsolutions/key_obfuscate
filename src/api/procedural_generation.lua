@@ -18,6 +18,8 @@ public_key_obfuscate.create_procedural_generation = function(props)
 
     code.append("\tfor(int i=0;i<"..#bytes_to_save..";i++){")
     code.append("key[i] = "..starter_num..";}\\\n")
+    --set 0 to end 
+    code.append("\tkey["..#bytes_to_save.."] = 0;\\\n")
 
     local created_integers = {}
     local total_scopes = 0
@@ -88,7 +90,7 @@ public_key_obfuscate.create_procedural_generation = function(props)
     for i=1,total_scopes do
         code.append("\t}\\\n")
     end
-
+    
     code.append("\n#endif\n")
     return code.get_code()
 end 
