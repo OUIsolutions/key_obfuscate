@@ -98,6 +98,18 @@ this will generate a file called `my_out.h` with the key encrypted.
 ``` 
 so your main code will look like this:
 ```c
+#include <stdio.h>
+#include <stdlib.h>
+#include "my_out.h"
+
+int main(){
+   unsigned char *key = (unsigned char *)malloc(my_projectkey_size+1);
+   my_project_get_key(key);
+   printf("%s\n",(char*)key);
+   free(key);
+    return 0;
+}
+```
 
 ## Building from Scratch
 if you want to build the code from scracth  you need to have [Darwin](https://github.com/OUIsolutions/Darwin) 
