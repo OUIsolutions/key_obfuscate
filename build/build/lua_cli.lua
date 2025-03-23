@@ -4,6 +4,7 @@
 
 function create_cli_lua()
     local cli_project = darwin.create_project("cli")
+    cli_project.embed_global("help",darwin.dtw.load_file("help.txt"))
     cli_project.add_lua_code("key_obfuscate = function()")
     cli_project.add_lua_code(create_api())
     cli_project.add_lua_code("end")

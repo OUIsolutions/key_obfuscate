@@ -3,6 +3,11 @@
 function main()
     local content = argv.get_flag_arg_by_index({"entry", "e"},1)
 
+    local help = argv.get_flag_arg_by_index({"help", "h"},1)
+    if help then
+        print(help)
+        return
+    end
     if not content then
         entry_file = argv.get_flag_arg_by_index({ "entry_file", "ef"},1)
         if not entry_file then
