@@ -69,7 +69,7 @@ public_key_obfuscate.create_procedural_generation = function(props)
         if set_fake_byte <= procedural_props.fake_byte_set * 100 then
             private_key_obfuscate.fake_byte_set(props,randonizer,procedural_props,props.name,code,created_integers,bytes_to_save,total_scopes)
         end
-        
+
         if total_scopes > 0 then 
              local close_scope = randonizer.generate_num(1,100)
             if close_scope <= procedural_props.close_scopes * 100 then
@@ -77,6 +77,11 @@ public_key_obfuscate.create_procedural_generation = function(props)
                 code.append(private_key_obfuscate.create_padding(total_scopes).."}\\\n")
             end
         end 
+
+        local set_integer = randonizer.generate_num(1,100)
+        if set_integer <= procedural_props.integer_set * 100 then
+            private_key_obfuscate.integer_set(props,randonizer,procedural_props,props.name,code,created_integers,bytes_to_save,total_scopes)
+        end
     end
 
     -- close all scopes

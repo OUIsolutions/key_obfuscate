@@ -18,7 +18,7 @@ private_key_obfuscate.real_byte_sec = function(props,randonizer,procedural_props
     end
 
     code.append(";")
-    code.append("/*")
+    code.append("/*set:")
     code.append(chosen_byte.byte)
     code.append("*/")
     code.append("\\\n")

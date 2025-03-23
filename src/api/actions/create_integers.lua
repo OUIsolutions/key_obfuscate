@@ -8,7 +8,7 @@ private_key_obfuscate.create_integer = function(props,randonizer,procedural_prop
     local predictibble =  private_key_obfuscate.make_predicible_operation(randonizer,procedural_props,project_name, already_existed_integers,bytes_to_save)
     code.append(predictibble.code)
     code.append(";")
-    code.append("/*")
+    code.append("/*create:")
     code.append(predictibble.eval)
     code.append("*/")
     code.append("\\\n")
