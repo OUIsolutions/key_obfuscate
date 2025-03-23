@@ -15,6 +15,6 @@ private_key_obfuscate.create_integer = function(randonizer,procedural_props,proj
     --code.append(predictibble.evalated_str)
     already_existed_integers[index] = predictibble.eval
 
-    code.append('printf("expected %d and was %d \\n",'..predictibble.eval..','..name..');')
-    code.append("\\\n")
+    --code.append('printf("expected %d and was %d \\n",'..predictibble.eval..','..name..');')
+    --code.append("\\\n")
 end
