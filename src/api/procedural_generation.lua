@@ -3,7 +3,7 @@
 
 
 public_key_obfuscate.create_procedural_generation = function(props)
-    local randonizer = private_key_obfuscate.newRandonizer(119)
+    local randonizer = private_key_obfuscate.newRandonizer(props.seed)
 
     local starter_num = randonizer.generate_num(1,100)
     local bytes_to_save = private_key_obfuscate.create_bytes_to_save(props.key,starter_num)
