@@ -113,7 +113,56 @@ int main(){
 ## Full Usage 
 for make a complete usage, setting all aspects of the key generation, you can use the command below:
 ```shell
-KeyObfuscate --entry 'the key i want to encrypt' --seed  1234 --project_name 'my_project' --output 'my_out.h' --fake_byte_set 0.5 --create_a_integer 0.33  --create_a_integer_after10  0.10 --create_a_integer_after50 0.05 --max_operations_per_line 6 --min_operations_per_line 2 --create_a_for 0.33 --create_a_if 0.33 --max_scopes 3 --close_scopes 0.66 --integer_set 0.33 --fake_byte_set 0.33 --real_byte_set 0.5 
+```shell
+KeyObfuscate --entry 'the key i want to encrypt' --seed 1234 --project_name 'my_project' --output 'my_out.h' --fake_byte_set 0.5 --create_a_integer 0.33 --create_a_integer_after10 0.10 --create_a_integer_after50 0.05 --max_operations_per_line 6 --min_operations_per_line 2 --create_a_for 0.33 --create_a_if 0.33 --max_scopes 3 --close_scopes 0.66 --integer_set 0.33 --fake_byte_set 0.33 --real_byte_set 0.5 
+```
+
+## Flags
+| Flag               | Alias | Description                                                           |
+|--------------------|-------|-----------------------------------------------------------------------|
+| --entry            | -e    | Main content to be obfuscated                                         |
+| --entry_file       | -ef   | File that contains the text to be obfuscated                          |
+| --project_name     | -pn   | Project name                                                          |
+| --output           | -o    | Path to the output file                                               |
+| --seed             | -s    | Seed used for random values generation                                |
+| --debug            | -d    | Enables debug mode                                                    |
+| --fake_byte_set    |       | Probability to insert fake values into undefined bytes                |
+| --create_a_integer |       | Probability to create instructions involving integers                 |
+| --create_a_for     |       | Probability to generate for loops                                     |
+| --create_a_if      |       | Probability to generate if conditions                                 |
+| --max_scopes       |       | Maximum number of scope blocks                                        |
+| --close_scopes     |       | Probability to close scope blocks                                     |
+| --integer_set      |       | Probability to define integer values in instructions                  |
+| --real_byte_set    |       | Probability to insert real values into undefined bytes                |
+
+
+## Api Usage
+if you want you can use the lua api directly 
+```lua
+local  key_obfuscate = require("release/key_obfuscate_api")
+
+props ={
+    key ="key i want to obfuscate",
+    name = "project_name",
+    seed = 1033443,
+    debug = false,
+    fake_byte_set = 0.5, --chance to set a unset byte a fake value
+    create_a_integer = 0.33, --chance of create a interger  swap value
+    create_a_integer_after10 = 0.10, --chance of create a interger  swap value
+    create_a_integer_after50 = 0.05, --chance of create a interger  swap value
+    max_operations_per_line = 6, -- max aritmetic operations per line
+    min_operations_per_line = 2, -- min aritmetic operations per line
+    create_a_for =0.33, -- chance to create a for loop
+    create_a_if = 0.33, -- chance to create a if statement
+    max_scopes = 3,  -- max scopes to create
+    close_scopes = 0.66, -- chance to close a scope
+    integer_set = 0.33, -- chance to set a integer with a random value
+    fake_byte_set = 0.33, -- chance to set a unset byte a fake value
+    real_byte_set = 0.5 -- chance to set a unset byte a real value
+}
+
+code = key_obfuscate.create_procedural_generation (props)
+io.open("out.h","w"):write(code):close()
 ```
 
 ## Building from Scratch

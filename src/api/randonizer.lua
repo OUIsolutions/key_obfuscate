@@ -36,12 +36,21 @@ private_key_obfuscate.newRandonizer = function(seed)
     local seed = seed
     local increment = 10
     self_obj.generate_num = function(min,max)
+        if min == max then
+            return min
+        end
         
         increment = increment + 10
         local num = private_key_obfuscate.rand_generate(increment,seed)
         return private_key_obfuscate.ajust(num,min,max)
     end 
     self_obj.choice = function(itens)
+        if #itens == 0 then
+            return nil
+        end
+        if #itens == 1 then
+            return itens[1]
+        end
         local index = self_obj.generate_num(1,#itens)
         return itens[index]
     end

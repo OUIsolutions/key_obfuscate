@@ -60,6 +60,9 @@ function main()
     for k,v in pairs(props) do
         local flag = argv.get_flag_arg_by_index({k},1)
         if flag then
+            if type(v) == "number" then
+                flag = tonumber(flag)
+            end
             props[k] = flag
         end
     end

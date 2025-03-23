@@ -1,0 +1,24 @@
+Usage: KeyObfuscate [flags]
+    -e,  --entry <text>            Obfuscates the given text
+    -ef, --entry_file <path>       Reads the text to encrypt from a file
+    -pn, --project_name <name>     Defines the project name
+    -o,  --output <path>           Sets the output header file (default: <project_name>.h)
+    -s,  --seed <number>           Specifies the random seed (default: 1000)
+    -d,  --debug                   Enables debug mode
+
+Additional flags:
+            --fake_byte_set <prob>     Probability of inserting fake bytes (default: 0.33)
+            --create_a_integer <prob>  Probability of generating integer instructions (default: 0.33)
+            --create_a_for <prob>      Probability of generating FOR loops (default: 0.33)
+            --create_a_if <prob>       Probability of generating IF statements (default: 0.33)
+            --real_byte_set <prob>     Probability of inserting real bytes (default: 0.5)
+            --max_scopes <number>      Maximum scope blocks to generate (default: 3)
+            --close_scopes <prob>      Probability to close scopes (default: 0.66)
+            --max_operations_per_line <num> Max operations per line (default: 6)
+            --min_operations_per_line <num> Min operations per line (default: 2)
+            --create_a_integer_after10 <prob> Chance to create integer instructions after 10 (default: 0.10)
+            --create_a_integer_after50 <prob> Chance to create integer instructions after 50 (default: 0.05)
+
+Examples:
+    KeyObfuscate --entry "my secret" --seed 1234 --project_name "my_project" --output "my_out.h"
+    KeyObfuscate --entry_file secrets.txt --project_name "project2" --debug
