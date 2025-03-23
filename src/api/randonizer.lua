@@ -40,6 +40,9 @@ private_key_obfuscate.newRandonizer = function(seed)
         local num = private_key_obfuscate.rand_generate(increment,seed)
         return private_key_obfuscate.ajust(num,min,max)
     end 
-
+    self_obj.choice = function(itens)
+        local index = self_obj.generate_num(1,#itens)
+        return itens[index]
+    end
     return self_obj
 end

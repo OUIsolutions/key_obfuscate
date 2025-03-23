@@ -10,11 +10,19 @@ public_key_obfuscate.create_encryptations = function(props)
     code.append("#ifndef "..props.name .. "_get_key\n")
     code.append("#define "..props.name.."_get_key(key) \\\n")
 
+    local created_integers = {}
+
     while true do 
 
         if private_key_obfuscate.terminated(bytes_to_save) then 
             break
         end
+
+        local create_integer_choice = randonizer.generate_num(1,100)
+        if create_integer_choice <= statisc.create_a_integer * 100 then
+           private_key_obfuscate.create_integer(randonizer,props.name,code,created_integers,bytes_to_save)
+        end
+
 
         local chosen_byte = private_key_obfuscate.get_randon_not_ajusted_byte(randonizer,bytes_to_save)
         code.append("\tkey["..chosen_byte.index.."] = "..chosen_byte.byte.."; \\\n")
