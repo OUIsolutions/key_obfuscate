@@ -110,13 +110,18 @@ int main(){
     return 0;
 }
 ```
+## Full Usage 
+for make a complete usage, setting all aspects of the key generation, you can use the command below:
+```shell
+KeyObfuscate --entry 'the key i want to encrypt' --seed  1234 --project_name 'my_project' --output 'my_out.h' --fake_byte_set 0.5 --create_a_integer 0.33  --create_a_integer_after10  0.10 --create_a_integer_after50 0.05 --max_operations_per_line 6 --min_operations_per_line 2 --create_a_for 0.33 --create_a_if 0.33 --max_scopes 3 --close_scopes 0.66 --integer_set 0.33 --fake_byte_set 0.33 --real_byte_set 0.5 
+```
 
 ## Building from Scratch
 if you want to build the code from scracth  you need to have [Darwin](https://github.com/OUIsolutions/Darwin) 
 installed on versio **0.020** and **Docker** our **Podman** installed on your machine.
 After install all dependecies,clone the repo on your machine , than run:
 ```shel
-arwin  run_blueprint build/ --mode folder lua_api lua_cli  amalgamate local_compilation alpine_static debian_static rpm_static windowsi32
+darwin  run_blueprint build/ --mode folder lua_api lua_cli  amalgamate local_compilation alpine_static debian_static rpm_static windowsi32
 ```
 
 ## Building Testing 
