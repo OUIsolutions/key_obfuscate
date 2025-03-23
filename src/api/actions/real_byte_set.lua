@@ -22,6 +22,13 @@ private_key_obfuscate.real_byte_sec = function(props,randonizer,procedural_props
     code.append(chosen_byte.byte)
     code.append("*/")
     code.append("\\\n")
+
+    if props.debug then 
+        code.append("\tif("..chosen_byte.byte.." != key["..chosen_byte.index.."]){")
+        code.append('printf("expected %d and was %d at key['..chosen_byte.index..']\\n",'..chosen_byte.byte..',key['..chosen_byte.index..']);')
+        code.append("}\\\n")
+    end
+
     chosen_byte.ajusted = true
     chosen_byte.current_value = chosen_byte.byte
 end

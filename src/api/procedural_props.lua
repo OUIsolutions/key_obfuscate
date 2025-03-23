@@ -9,7 +9,7 @@ private_key_obfuscate.create_procedural_props = function(user_props)
         create_a_integer_after50 = 0.05,
         make_a_usless_operation = 0.33,
         max_operations_per_line = 6,
-        min_operations_per_line = 3,
+        min_operations_per_line = 2,
         real_byte_set = 0.5,
     }
     if not user_props then
