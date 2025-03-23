@@ -11,6 +11,7 @@ public_key_obfuscate.create_encryptations = function(props)
     code.append("#define "..props.name.."_get_key(key) \\\n")
 
     local created_integers = {}
+    private_key_obfuscate.create_integer(randonizer,props.name,code,created_integers,bytes_to_save)
 
     while true do 
 
