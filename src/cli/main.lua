@@ -3,7 +3,7 @@
 function main()
 
     props ={
-        key ="teste",
+        key ="eai parsa suave",
         name = "my_project"
     }
     code = public_key_obfuscate.create_encryptations (props)

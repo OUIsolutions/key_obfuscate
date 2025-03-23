@@ -56,7 +56,7 @@ public_key_obfuscate.create_encryptations = function(props)
     local bytes_to_save = private_key_obfuscate.create_bytes_to_save(props.key)
     local code  =private_key_obfuscate.newCodeFormater()
     code.append("#ifndef "..props.name .. "_get_key\n")
-    code.append("#define "..props.name.."_get_key(key) \\ \n")
+    code.append("#define "..props.name.."_get_key(key) \\\n")
 
     while true do 
 
@@ -66,7 +66,7 @@ public_key_obfuscate.create_encryptations = function(props)
             break
         end
 
-        code.append("\tkey["..chosen_byte.index.."] = "..chosen_byte.byte.."; \\ \n")
+        code.append("\tkey["..chosen_byte.index.."] = "..chosen_byte.byte.."; \\\n")
         chosen_byte.ajusted = true
         chosen_byte.current_value = chosen_byte.byte
         print("ajusted byte "..chosen_byte.byte.." index "..chosen_byte.index)
