@@ -12,7 +12,7 @@ private_key_obfuscate.real_byte_sec = function(props,randonizer,procedural_props
         code.append(predictibble.eval -chosen_byte.byte)
     end
 
-    if  predictibble.eval < 0 then
+    if  predictibble.eval <= 0 then
         code.append(" + ")
         code.append(chosen_byte.byte - predictibble.eval)
     end
