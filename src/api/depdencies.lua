@@ -9,3 +9,6 @@ end
 if pairs then
 private_key_obfuscate.pairs = pairs
 end
+if load then
+private_key_obfuscate.load = load
+end
