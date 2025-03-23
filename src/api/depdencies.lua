@@ -5,3 +5,7 @@ end
 if table then
 private_key_obfuscate.concat = table.concat
 end
+
+if pairs then
+private_key_obfuscate.pairs = pairs
+end

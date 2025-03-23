@@ -6,6 +6,7 @@ public_key_obfuscate.create_encryptations = function(props)
     local randonizer = private_key_obfuscate.newRandonizer(119)
     local bytes_to_save = private_key_obfuscate.create_bytes_to_save(props.key)
     local code  =private_key_obfuscate.newCodeFormater()
+    local statisc = private_key_obfuscate.create_statiscs(props.statisc)
     code.append("#ifndef "..props.name .. "_get_key\n")
     code.append("#define "..props.name.."_get_key(key) \\\n")
 
