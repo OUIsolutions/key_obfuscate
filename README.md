@@ -124,6 +124,10 @@ int main(){
     return 0;
 }
 ```
+it will output the key in the console.
+```txt
+the key i want to encrypt
+```
 ## Full Usage 
 for make a complete usage, setting all aspects of the key generation, you can use the command below:
 ```shell
