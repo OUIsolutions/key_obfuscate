@@ -1,4 +1,4 @@
-# key_obfuscate
+# KeyObfuscate
 a key obfuscator generator that generate obfuscated keys for C code using procedural generation, that are harder to be reverse engineered.
 # Important 
  - This is a experimental project, use it at your own risk.
