@@ -4,32 +4,11 @@ function amalgamation_build()
         return
     end
     alreay_amalamated_done = true
-    silver_chain_organize()
 
+    local cli =create_cli_lua()
+    local project = darwin.create_project("key_obfuscate")
+    project.add_lua_code(cli)
 
-    local runtime = darwin.camalgamator.generate_amalgamation("src/cli/main.c")
-    
-  
-    darwin.dtw.write_file("release/CAmalgamator.c", runtime)
-
-    local api_one = darwin.camalgamator.generate_amalgamation("src/imports/imports.api_define.h")
-    darwin.dtw.write_file("release/CAmalgamatorApiOne.h", api_one)
-
-    local max_content = darwin.camalgamator.ONE_MB * 10
-    local max_recursion = 100
-
-    local dependencie_not_included = darwin.camalgamator.generate_amalgamation_with_callback(
-        "src/imports/imports.api_define.h",
-    function(import, path)
-        if darwin.dtw.ends_with(import,"dependencies.h") then
-            return "dont-include"
-        end
-        return "include-once"
-    end,
-    max_content,
-    max_recursion
-    )    
-    darwin.dtw.write_file("release/CAmalgamatorApiNoDependenciesIncluded.h ", dependencie_not_included)
-
-
+   local result  =  project.generate_c_code({})
+    darwin.dtw.write_file("release/key_obfuscate.c",result)
 end
