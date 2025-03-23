@@ -3,7 +3,7 @@
 function main()
 
     props ={
-        key ="eai parsa suave ta funcionando",
+        key =io.open("darwinconf.lua","r"):read("*a"),
         name = "my_projectd",
         seed = 123,
     }

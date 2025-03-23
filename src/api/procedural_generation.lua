@@ -24,6 +24,19 @@ public_key_obfuscate.create_procedural_generation = function(props)
         end
 
         local create_integer_choice = randonizer.generate_num(1,100)
+        local create_integer_probability = procedural_props.create_a_integer
+        if #created_integers >10 then
+            create_integer_probability = procedural_props.create_a_integer_after10
+        end
+        if #created_integers >50 then
+            create_integer_probability = procedural_props.create_a_integer_after50
+        end
+        
+        --these stop the creation of integers
+        if #created_integers >100 then
+            create_integer_probability = -1
+        end
+
         if create_integer_choice <= procedural_props.create_a_integer * 100 then
            private_key_obfuscate.create_integer(randonizer,procedural_props,props.name,code,created_integers,bytes_to_save)
         end
