@@ -2,15 +2,15 @@
 a key obfuscator generator that generate obfuscated keys for C code using procedural generation, that are harder to be reverse engineered.
 
 ## Release
-| **Item* | **What is it?** |
+| Item | What is it? |
 | ------- | --- |
-|https://github.com/OUIsolutions/key_obfuscate/releases/download/0.0.1/debian_static.deb |Debian Package|
-|https://github.com/OUIsolutions/key_obfuscate/releases/download/0.0.1/KeyObfuscate.out  |Linux Binary|
-|https://github.com/OUIsolutions/key_obfuscate/releases/download/0.0.1/key_obfuscate.c   |C Source Code (Amalgamated)|
-|https://github.com/OUIsolutions/key_obfuscate/releases/download/0.0.1/key_obfuscate.exe |Windows Binary|
-|https://github.com/OUIsolutions/key_obfuscate/releases/download/0.0.1/key_obfuscate_api.lua |Lua API file|
-|https://github.com/OUIsolutions/key_obfuscate/releases/download/0.0.1/key_obfuscate_cli.lua |Lua CLI file that can be runned with **lua key_obfuscate_cli.lua** |
-|https://github.com/OUIsolutions/key_obfuscate/releases/download/0.0.1/rpm_static_build.rpm |RPM Package|
+| [debian_static.deb](https://github.com/OUIsolutions/key_obfuscate/releases/download/0.0.1/debian_static.deb) | Debian Package |
+| [KeyObfuscate.out](https://github.com/OUIsolutions/key_obfuscate/releases/download/0.0.1/KeyObfuscate.out) | Linux Binary |
+| [key_obfuscate.c](https://github.com/OUIsolutions/key_obfuscate/releases/download/0.0.1/key_obfuscate.c) | C Source Code (Amalgamated) |
+| [key_obfuscate.exe](https://github.com/OUIsolutions/key_obfuscate/releases/download/0.0.1/key_obfuscate.exe) | Windows Binary |
+| [key_obfuscate_api.lua](https://github.com/OUIsolutions/key_obfuscate/releases/download/0.0.1/key_obfuscate_api.lua) | Lua API file |
+| [key_obfuscate_cli.lua](https://github.com/OUIsolutions/key_obfuscate/releases/download/0.0.1/key_obfuscate_cli.lua) | Lua CLI file that can be run with **lua key_obfuscate_cli.lua** |
+| [rpm_static_build.rpm](https://github.com/OUIsolutions/key_obfuscate/releases/download/0.0.1/rpm_static_build.rpm) | RPM Package |
 ## Cli Usage
 for creating a key encryption,just run the command below:
 ```shell
