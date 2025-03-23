@@ -33,7 +33,6 @@ public_key_obfuscate.create_procedural_generation = function(props)
         code.append("\tkey["..chosen_byte.index.."] = "..chosen_byte.byte.."; \\\n")
         chosen_byte.ajusted = true
         chosen_byte.current_value = chosen_byte.byte
-        print("ajusted byte "..chosen_byte.byte.." index "..chosen_byte.index)
 
 
     end

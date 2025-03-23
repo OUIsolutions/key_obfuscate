@@ -36,6 +36,7 @@ private_key_obfuscate.newRandonizer = function(seed)
     local seed = seed
     local increment = 10
     self_obj.generate_num = function(min,max)
+        
         increment = increment + 10
         local num = private_key_obfuscate.rand_generate(increment,seed)
         return private_key_obfuscate.ajust(num,min,max)
