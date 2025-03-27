@@ -115,11 +115,12 @@ so your main code will look like this:
 #include <stdio.h>
 #include <stdlib.h>
 #include "my_out.h"
-
+#include <string.h>
 int main(){
    unsigned char *key = (unsigned char *)malloc(my_projectkey_size+1);
    my_project_get_key(key);
    printf("%s\n",(char*)key);
+   memset(key,0,my_projectkey_size);
    free(key);
     return 0;
 }
